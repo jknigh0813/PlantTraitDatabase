@@ -13,7 +13,7 @@ inpath = "C:/PhyloTraitEst/"
 #0. Import TRY data (downloaded 7/25/2023)
 TRYdata1 <- rtry_import(paste(inpath,"TRY_RawData/27968.txt",sep=""))
 
-#1. Extract TRY Root Depth data and clean
+#1. Extract TRY data and clean
 Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID)
 colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID')
 trait_vals = unique(Trait$TraitID)

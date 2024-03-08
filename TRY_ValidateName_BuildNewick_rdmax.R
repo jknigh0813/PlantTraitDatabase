@@ -1,6 +1,6 @@
 #####################################################################
-# Reformat P12 TRY data for further analysis
-#Created: James Knighton (7/25/2023)
+# Reformat rdMAX TRY data for further analysis
+# Created: James Knighton (7/25/2023)
 #####################################################################
 
 library(rtry)
@@ -17,11 +17,10 @@ TRYdata1 <- rtry_import(paste(inpath,"TRY_RawData/27968.txt",sep=""))
 Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID)
 colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID')
 trait_vals = unique(Trait$TraitID)
-Trait = Trait[which(Trait$TraitID == 719),]
+Trait = Trait[which(Trait$TraitID == 6),]
 datatypes = unique(Trait$DataName)
-keeps = c("Xylem water potential at which 12% of conductivity is lost (P12)")
+keeps = c("Root rooting depth" )
 Trait = Trait[which(Trait$DataName %in% keeps),]
-
 Trait = Trait[which(!is.na(Trait$Value)),]
 Trait = Trait[which(Trait$FullName != "unknown"),]
 Trait = Trait[which(Trait$FullName != "Coffea arabica" & Trait$FullName != "Glycine max"),]
@@ -40,9 +39,9 @@ WFO_Names = data.frame(species = NameMatch$scientificName, genus = NameMatch$Gen
 phylotree <- phylo.maker(WFO_Names, scenarios=c("S3"))
 
 #4. Write Newick Tree
-write.tree(phylotree$scenario.3,paste(inpath,"TRY_Values_NewickTrees/TRY_P12_Newick.txt",sep=""))
+write.tree(phylotree$scenario.3,paste(inpath,"TRY_Values_NewickTrees/TRY_rdmax_Newick.txt",sep=""))
 
 #5. Write Raw Data
 TraitExport = unique(data.frame(NameMatch$DataID,NameMatch$scientificName,NameMatch$family,NameMatch$genus,NameMatch$specificEpithet,NameMatch$Value))
 colnames(TraitExport) <- c('DataID','spec.name','Family','Genus','Species','Value')
-write.table(TraitExport,paste(inpath,"TRY_Values_NewickTrees/TRY_P12_Values.csv",sep=""),row.names = FALSE,sep=",",quote = FALSE)
+write.table(TraitExport,paste(inpath,"TRY_Values_NewickTrees/TRY_rdmax_Values.csv",sep=""),row.names = FALSE,sep=",",quote = FALSE)
