@@ -15,4 +15,5 @@
 
 References:
 Knighton, J., Sanchez-Martinez, P., Anderegg, L. (In Prep). A Globally Comprehensive Database of Tree Hydraulic and Structural Traits Imputed from Phylogenetic Relationships.
+
 Kattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, I. C., Leadley, P., ... & Cuntz, M. (2020). TRY plant trait database–enhanced coverage and open access. Global change biology, 26(1), 119-188.
