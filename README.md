@@ -12,3 +12,5 @@
 * RF_TraitPredict_Global.R – Imputes tree species traits in batches from PEMs.
 * Graphlan_Export_TRY.R – formats TRY data for fancy phylo plots in Graphlan.
 * Graphlan_Export_RF_Residuals.R – formats RF model residuals for fancy phylo plots in Graphlan.
+
+Knighton, J., Sanchez-Martinez, P., Anderegg, L. (In Prep). A Globally Comprehensive Database of Tree Hydraulic and Structural Traits Imputed from Phylogenetic Relationships.
