@@ -13,4 +13,6 @@
 * Graphlan_Export_TRY.R – formats TRY data for fancy phylo plots in Graphlan.
 * Graphlan_Export_RF_Residuals.R – formats RF model residuals for fancy phylo plots in Graphlan.
 
+References:
 Knighton, J., Sanchez-Martinez, P., Anderegg, L. (In Prep). A Globally Comprehensive Database of Tree Hydraulic and Structural Traits Imputed from Phylogenetic Relationships.
+Kattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, I. C., Leadley, P., ... & Cuntz, M. (2020). TRY plant trait database–enhanced coverage and open access. Global change biology, 26(1), 119-188.
