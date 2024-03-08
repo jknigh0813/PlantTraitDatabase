@@ -3,6 +3,7 @@
 * TRY_ValidateName_BuildNewick_N.R – Imports raw TRY database trait files for trait N, checks names against a World Flora Online (WFO), and build newick tree using V.Phylomaker2.
 * GlobalTrees_ValidateNames.R – Validates/corrects BCGI Global Tree Search database names against WFO
 * PhyloSig_HypTest_TRY.R – Pagel's lambda test on cleaned TRY data.
+* PhyloSig_HypTest_TRY_GenusLevel.R – Pagel's lambda test on cleaned TRY data clipped to genus level.
 * Solve_PEMs_TRY.R - Solve PEMs from cleaned TRY data.
 * Solve_PEMs_Global.R - Solve PEMs for BCGI database. Works in batches to avoid memory bottlenecks.
 * Solve_PCoAs_TRY.R - Solve PCoAs from cleaned TRY data.
