@@ -12,6 +12,8 @@
 * RF_TraitPredict_Global.R – Imputes tree species traits in batches from PEMs.
 * Graphlan_Export_TRY.R – formats TRY data for fancy phylo plots in Graphlan.
 * Graphlan_Export_RF_Residuals.R – formats RF model residuals for fancy phylo plots in Graphlan.
+* SEP_Parameter_Estimate.m – Estimates SEP distribution parameters.
+* SEPrnd.m – generates SEP random numbers.
 
 References:
 
