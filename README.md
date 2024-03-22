@@ -8,7 +8,7 @@
 * Solve_PEMs_Global.R - Solve PEMs for BCGI database. Works in batches to avoid memory bottlenecks.
 * Solve_PCoAs_TRY.R - Solve PCoAs from cleaned TRY data.
 * RF_TraitPredict_TRY.R – RF model to predict traits from PEMs
-* PhyloSig_HypTest_RF_Residuals.R – Page's lambda test on RF model residuals.
+* PhyloSig_HypTest_RF_Residuals.R – Pagel's lambda test on RF model residuals.
 * RF_TraitPredict_Global.R – Imputes tree species traits in batches from PEMs.
 * Graphlan_Export_TRY.R – formats TRY data for fancy phylo plots in Graphlan.
 * Graphlan_Export_RF_Residuals.R – formats RF model residuals for fancy phylo plots in Graphlan.
