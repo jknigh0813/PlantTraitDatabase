@@ -22,6 +22,7 @@ datatypes = unique(Trait$DataName)
 keeps = c("Xylem water potential at which 88% of conductivity is lost (P88)")
 Trait = Trait[which(Trait$DataName %in% keeps),]
 Trait = Trait[which(!is.na(Trait$Value)),]
+Trait = Trait[which(Trait$Value <= -0.75),]
 Trait = Trait[which(Trait$FullName != "unknown"),]
 Trait = Trait[which(Trait$FullName != "Coffea arabica" & Trait$FullName != "Glycine max"),]
 Trait[,6:7] <- data.frame(do.call('rbind', strsplit(as.character(Trait$FullName),' ',fixed=TRUE)))

@@ -8,15 +8,16 @@ library(WorldFlora)
 library(V.PhyloMaker2)
 library(ape)
 
-inpath = "C:/PhyloTraitEst/"
+inpath = "D:/PhyloTraitEst/"
 
 #0. Import TRY data (downloaded 7/25/2023)
 TRYdata1 <- rtry_import(paste(inpath,"TRY_RawData/27968.txt",sep=""))
 
 #1. Extract TRY data and clean
-Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID)
-colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID')
+Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID, TRYdata1$ErrorRisk)
+colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID','ErrorRisk')
 trait_vals = unique(Trait$TraitID)
+Trait = Trait[which(Trait$ErrorRisk < 5),]
 Trait = Trait[which(Trait$TraitID == 6),]
 datatypes = unique(Trait$DataName)
 keeps = c("Root rooting depth" )

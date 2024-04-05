@@ -9,14 +9,15 @@ library(V.PhyloMaker2)
 library(ape)
 library(dplyr)
 
-inpath = "C:/PhyloTraitEst/"
+inpath = "D:/PhyloTraitEst/"
 
 #0. Import TRY data (downloaded 7/25/2023)
 TRYdata1 <- rtry_import(paste(inpath,"TRY_RawData/27967.txt",sep=""))
 
 #1a. Extract TRY data and clean
-Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID,TRYdata1$DatasetID,TRYdata1$Reference)
-colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID','DatasetID','Ref')
+Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID,TRYdata1$DatasetID,TRYdata1$Reference, TRYdata1$ErrorRisk)
+colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID','DatasetID','Ref','ErrorRisk')
+Trait = Trait[which(Trait$ErrorRisk < 5),]
 Trait = Trait[which(Trait$TraitID == 45),]
 datatypes = unique(Trait$DataName)
 keeps = c("Stomata conductance to water vapour per leaf area","Stomata conductance per leaf area at Asat measurement","stomata conductance to water vapour under conditions of light saturation, high relative humidity, and growth CO2 concentration.","stomata conductance per leaf area","Stomata conductance per leaf area max","Max of max stomata conductance","Maximum stomata conductance per leaf area","stomata conductance in the limit of saturating light, zero VPD, maximum soil water content and at the reference value of Cs = 350 ppm","Stomata conductance per leaf area at Amax measurement (saturating light and saturating CO2)","Stomat conductance at Amax")
