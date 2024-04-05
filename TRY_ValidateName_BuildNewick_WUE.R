@@ -16,7 +16,7 @@ TRYdata1 <- rtry_import(paste(inpath,"TRY_RawData/28122.txt",sep=""))
 #Extract TRY data and clean
 Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID, TRYdata1$ErrorRisk)
 colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID','ErrorRisk')
-Trait = Trait[which(Trait$ErrorRisk < 5),]
+Trait = Trait[which(Trait$ErrorRisk <= 5),]
 Trait = Trait[which(Trait$TraitID == 134),]
 datatypes = unique(Trait$DataName)
 keeps = c("Instantaneous water use effinciency (photosynthesis/transpiration; WUE)","Water use efficiency (WUE)","Leaf water use efficiency (WUE)")

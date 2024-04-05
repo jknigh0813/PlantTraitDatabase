@@ -14,8 +14,9 @@ inpath = "C:/PhyloTraitEst/"
 TRYdata1 <- rtry_import(paste(inpath,"TRY_RawData/27968.txt",sep=""))
 
 #1. Extract TRY data and clean
-Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID)
-colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID')
+Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID, TRYdata1$ErrorRisk)
+colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID','ErrorRisk')
+Trait = Trait[which(Trait$ErrorRisk < 5),]
 trait_vals = unique(Trait$TraitID)
 Trait = Trait[which(Trait$TraitID == 719),]
 datatypes = unique(Trait$DataName)

@@ -17,7 +17,7 @@ TRYdata1 <- rtry_import(paste(inpath,"TRY_RawData/27968.txt",sep=""))
 Trait = data.frame(TRYdata1$ObsDataID,TRYdata1$AccSpeciesName, TRYdata1$StdValue, TRYdata1$DataName, TRYdata1$TraitID, TRYdata1$ErrorRisk)
 colnames(Trait) <- c('DataID','FullName','Value','DataName','TraitID','ErrorRisk')
 trait_vals = unique(Trait$TraitID)
-Trait = Trait[which(Trait$ErroRisk < 7),]
+Trait = Trait[which(Trait$ErroRisk < 5),]
 Trait = Trait[which(Trait$TraitID == 719),]
 Trait = Trait[which(Trait$Value <= -0.25),]
 datatypes = unique(Trait$DataName)
